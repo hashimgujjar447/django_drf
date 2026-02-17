@@ -1,0 +1,67 @@
+GET http://127.0.0.1:8000/products/ HTTP/1.1
+
+###
+
+POST  http://127.0.0.1:8000/products/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxMzQ3NTQwLCJpYXQiOjE3NzEzNDcyNDAsImp0aSI6ImI1NjE2ZDY1OWFlZjRmNmE4ODQxZTQ2YTVmZWRhYmEwIiwidXNlcl9pZCI6IjQifQ.VPZqz-qw5Rq3UIfMiLkoE97qVVXWzCIS9D_7oQ_txig
+
+{
+    "name":"Television",
+    "price":200,
+    "stock":4,
+    "description":"This is the description of the television"
+}
+
+
+###
+
+
+POST  http://127.0.0.1:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"hashim",
+    "password":"123456"
+} 
+
+
+###
+
+POST  http://127.0.0.1:8000/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+   "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MTQzNDAwNSwiaWF0IjoxNzcxMzQ3NjA1LCJqdGkiOiJjNTY1YjBkZDg5NjM0YTM2OGQ2YjEyZmZjN2EyMGQwZCIsInVzZXJfaWQiOiI0In0.xb3pgfZ1h-smt2gBNY7ibKDLJf5_i91fqhPXIfyHkyQ"
+} 
+
+
+###
+
+
+GET  http://127.0.0.1:8000/products/3/ HTTP/1.1
+
+
+
+
+###
+
+
+PUT http://127.0.0.1:8000/products/3/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxMzQ5MDA3LCJpYXQiOjE3NzEzNDg3MDcsImp0aSI6IjRkYmY1Y2QzZGNiZjQ4MTY5NTNjMzBkZDE2OTI3MjViIiwidXNlcl9pZCI6IjIifQ.-PKZMSU_bxFJMeBJeeVZnJ4gE03GlBwwe0B8nXPrqoY
+
+   {
+  "name": "Velvet Underground & Nico",
+  "description": "Nesciunt perferendis quos esse, assumenda commodi repudiandae provident architecto reprehenderit ullam tempore vitae, nam natus quam, reiciendis natus explicabo odio quidem, esse molestiae inventore modi ullam labore minus fuga.",
+  "price": "15.99",
+  "stock": 20
+}
+
+
+
+###
+
+DELETE http://127.0.0.1:8000/products/1/ HTTP/1.1
+
+
