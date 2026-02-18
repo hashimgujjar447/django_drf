@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'silk',
       'drf_spectacular',
+      'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -41,6 +42,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
      'silk.middleware.SilkyMiddleware',
+
 ]
 
 ROOT_URLCONF = 'drf_course.urls'
@@ -127,6 +129,9 @@ REST_FRAMEWORK = {
           'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 5
 }
 
 
