@@ -21,10 +21,14 @@ class ProductFilter(django_filters.FilterSet):
             'price':['exact','lt','gt','range']
         }
 
+
+
+
 class OrderFilter(django_filters.FilterSet):
+    created_at=django_filters.DateFilter('created_at__date')
     class Meta:
         model=Order
         fields={
-            'order_id':['exact'],
+            'created_at':['lt','gt','exact'], 
             'status':['exact']
         }

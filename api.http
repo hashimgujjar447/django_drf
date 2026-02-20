@@ -21,7 +21,7 @@ POST  http://127.0.0.1:8000/api/token/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "username":"hashim",
+    "username":"hashi",
     "password":"123456"
 } 
 
@@ -49,7 +49,7 @@ GET  http://127.0.0.1:8000/products/3/ HTTP/1.1
 
 PUT http://127.0.0.1:8000/products/3/ HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxMzQ5MDA3LCJpYXQiOjE3NzEzNDg3MDcsImp0aSI6IjRkYmY1Y2QzZGNiZjQ4MTY5NTNjMzBkZDE2OTI3MjViIiwidXNlcl9pZCI6IjIifQ.-PKZMSU_bxFJMeBJeeVZnJ4gE03GlBwwe0B8nXPrqoY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxNTcwMjIwLCJpYXQiOjE3NzE1Njk5MjAsImp0aSI6IjI4ZjEzZTZlYThkYTQzYzJhYzlkZGM5ZTg3OGExN2MxIiwidXNlcl9pZCI6IjIifQ.ZZT1bZumA0YKvaPBu5RkXZefd-UB_0axT87AXSEcfT0
 
    {
   "name": "Velvet Underground & Nico",
@@ -63,5 +63,48 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 ###
 
 DELETE http://127.0.0.1:8000/products/1/ HTTP/1.1
+
+
+###
+GET  http://127.0.0.1:8000/orders/  HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxNTk3NzYyLCJpYXQiOjE3NzE1OTc0NjIsImp0aSI6IjdhM2U5MzMzZTQxNjQ4YzJhNTcxYWZkM2NhZjI5OTNlIiwidXNlcl9pZCI6IjQifQ.9OkU0sy_b0Q2Aa6_wz9U_VM5tYrBbEm5vjckIrMlRoY
+
+###
+
+POST  http://127.0.0.1:8000/orders/  HTTP/1.1
+Content-Type: application/json
+
+
+{
+    "status":"Pending",
+    "user":1,
+    "items":[
+        {
+            "product":2,
+            "quantity":5
+        }
+          
+    ]
+}
+
+
+
+###
+
+PUT   http://127.0.0.1:8000/orders/1dc5aed5-28d4-4b3f-8e70-587440a781aa/  HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxNTcwMjIwLCJpYXQiOjE3NzE1Njk5MjAsImp0aSI6IjI4ZjEzZTZlYThkYTQzYzJhYzlkZGM5ZTg3OGExN2MxIiwidXNlcl9pZCI6IjIifQ.ZZT1bZumA0YKvaPBu5RkXZefd-UB_0axT87AXSEcfT0
+
+{
+    "status":"Confirmed",
+    "user":2,
+    "items":[
+        {
+            "product":2,
+            "quantity":10
+        }
+          
+    ]
+}
 
 
